@@ -1,0 +1,7 @@
+<ul>
+    <li *ngFor="let node of nodes">
+      <app-tree-node [node]="node" (toggle)="toggleNode(node)"></app-tree-node>
+      <app-tree *ngIf="node.expanded && node.children" [nodes]="node.children"></app-tree>
+    </li>
+</ul>
+  

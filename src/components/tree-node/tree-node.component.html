@@ -1,0 +1,7 @@
+<div>
+    <span (click)="toggle.emit()" class="tree-node">
+      <i class="carrot" [class.right]="!node.expanded" [class.down]="node.expanded"></i>
+      {{ node.name }}
+    </span>
+</div>
+  
