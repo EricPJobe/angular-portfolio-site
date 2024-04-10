@@ -3,23 +3,23 @@ import { TreeNode } from '../../types/page';
 import { TreeComponent } from '../tree/tree.component';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-education-sidebar',
   standalone: true,
   imports: [TreeComponent],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  templateUrl: './education-sidebar.component.html',
+  styleUrl: './education-sidebar.component.css'
 })
-export class SidebarComponent {
+export class EducationSidebarComponent {
   @Output() pageSelected = new EventEmitter<TreeNode>();
 
   nodes: TreeNode[] = [
     {
-      ident: 'employment',
-      name: 'Employment history',
+      ident: 'education',
+      name: 'Education',
       children: [
-        { ident: 'poetic', name: 'Poetic Digital' },
-        { ident: 'privily', name: 'Privily.io' },
-        { ident: 'apache', name: 'Apache Corp.' },
+        { ident: 'phd', name: 'Ph.D. - The University of Chicago' },
+        { ident: 'masters', name: 'M.A. - The University of Chicago' },
+        { ident: 'bachelors', name: 'B.A. - Oklahoma Baptist University' },
       ],
     },
   ];

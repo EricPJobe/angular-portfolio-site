@@ -17,5 +17,8 @@ transform: rotate(90deg);
 }
 
 .tree-node {
-    color: #EEFFFF;
+    color: #5e81ac;
+    font-family: 'Fira Code';
+    font-size: 14px;;
+    cursor: pointer;
 }

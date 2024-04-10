@@ -1,6 +1,5 @@
 <main class="main">
-  <app-sidebar (pageSelected)="setPageSelect($event)" />
-  <app-main [openPages]="openPages"
-            (onClose)="closePage($event)" />
+  <app-top-side-menu />
+  <router-outlet></router-outlet>
 </main>
 

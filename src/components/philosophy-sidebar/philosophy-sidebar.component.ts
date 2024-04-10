@@ -3,23 +3,24 @@ import { TreeNode } from '../../types/page';
 import { TreeComponent } from '../tree/tree.component';
 
 @Component({
-  selector: 'app-sidebar',
+  selector: 'app-philosophy-sidebar',
   standalone: true,
   imports: [TreeComponent],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  templateUrl: './philosophy-sidebar.component.html',
+  styleUrl: './philosophy-sidebar.component.css'
 })
-export class SidebarComponent {
+export class PhilosophySidebarComponent {
   @Output() pageSelected = new EventEmitter<TreeNode>();
 
   nodes: TreeNode[] = [
     {
-      ident: 'employment',
-      name: 'Employment history',
+      ident: 'philosophy',
+      name: 'Philosophy',
       children: [
-        { ident: 'poetic', name: 'Poetic Digital' },
-        { ident: 'privily', name: 'Privily.io' },
-        { ident: 'apache', name: 'Apache Corp.' },
+        { ident: 'hegel', name: 'G. W. F. Hegel' },
+        { ident: 'schelling', name: 'F. J. W. Schelling' },
+        { ident: 'freud', name: 'Sigmund Freud' },
+        { ident: 'lacan', name: 'Jacques Lacan' },
       ],
     },
   ];

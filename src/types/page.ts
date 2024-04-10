@@ -1,12 +1,15 @@
 export interface Page {
-    ident: string,
-    name: string,
-    graphicUrl: string,
-    text: string,
+    ident: string;
+    name: string;
+    body: string;
+    graphicUrl: string;
+    text: string;
+    isActive: boolean;
   }
 
-  export interface TreeNode {
-    name: string;
-    children?: TreeNode[];
-    expanded?: boolean;
-  }
+export interface TreeNode {
+  ident: string;
+  name: string;
+  children?: TreeNode[];
+  expanded?: boolean;
+}

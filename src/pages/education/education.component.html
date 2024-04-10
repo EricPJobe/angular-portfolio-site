@@ -1,0 +1,43 @@
+<div class="outlet">
+    <app-education-sidebar />
+    <div class="main-container">
+        <div class="tabs">
+            <div *ngFor="let page of openPages" class="tab" [ngClass]="page.isActive ? 'active' : 'inactive'">
+                <span class="tab-text" (click)="setActive(page)">{{page.name}}</span> 
+                <span class="close-button" (click)="closePage(page)"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div *ngFor="let page of openPages">
+                <div *ngIf="page.isActive">
+                    <div class="code">
+                        <div class="line-numbers">
+                            <div *ngFor="let line of lines" class="line-number">{{line}}</div>
+                        </div>
+                        <div class="code-container">
+                            <div class="code-line">
+                                <span class="function">function</span><span style="display:inline-block; width: 10px;"></span>
+                                <span class="function-name">{{page.ident}}</span>
+                                <span class="paren">()</span><span style="display:inline-block; width: 10px;"></span>
+                                <span class="brace">{{'{'}}</span>
+                            </div>
+                            <div class="code-line">
+                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                <span class="function-name">console</span>
+                                <span class="operator">.</span>
+                                <span class="function-name">log</span>
+                                <span class="paren">{{'('}}</span>
+                                <span class="string">"{{page.body}}"</span>
+                                <span class="paren">{{')'}}</span>
+                                <span class="operator">{{';'}}</span>
+                            </div>
+                            <div class="code-line">
+                                <span class="brace">{{'}'}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
