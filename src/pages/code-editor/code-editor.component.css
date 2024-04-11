@@ -1,3 +1,13 @@
+code[class*="language-"],
+pre[class*="language-"] {
+    background: none;
+    text-shadow: none;
+}
+
+pre.line-numbers {
+   width: 100%;
+}
+
 .outlet {
     display: flex;
     flex-direction: row;
@@ -41,10 +51,9 @@
 .tab-content {
     height: 100vh;
     width: 100vw;
-    padding: 6px 12px;
+    padding: 6px 12px 6px 0;
     border: 1px solid #444;
     background-color: #1B2240;
-    color: #ccc;
 }
 
 .close-button {
@@ -62,7 +71,7 @@
 }
 
 .code-container {
-    padding-left: 20px;
+    padding-left: 0;
     display: flex;
     flex-direction: column;
 }

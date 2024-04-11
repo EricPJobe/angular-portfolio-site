@@ -3,6 +3,7 @@ export interface Page {
     name: string;
     body: string;
     graphicUrl: string;
+    codeUrl: string;
     text: string;
     isActive: boolean;
   }

@@ -1,0 +1,38 @@
+[
+    {
+        "ident": "intro",
+        "name": "introduction.js",
+        "body": "Hi! Welcome to my portfolio site! My name is Eric Jobe, and I am a software developer, educator, and community leader.",
+        "text": "Hello...",
+        "graphicUrl": "url_for_intro",
+        "codeUrl": "intro.ts",
+        "isActive": true
+    },
+    {
+        "ident": "apache",
+        "name": "apache.component.ts",
+        "body": "Apache content goes here",
+        "text": "Hello...",
+        "graphicUrl": "url_for_apache",
+        "codeUrl": "apache.component.ts",
+        "isActive": false
+    },
+    {
+        "ident": "privily",
+        "name": "privily.vue",
+        "body": "Privily content goes here.",
+        "text": "Hello...",
+        "graphicUrl": "url_for_intro",
+        "codeUrl": "privily.vue",
+        "isActive": false
+    },
+    {
+        "ident": "poetic",
+        "name": "poetic.ts",
+        "body": "Poetic content goes here.",
+        "text": "Hello...",
+        "graphicUrl": "url_for_intro",
+        "codeUrl": "poetic.tsx",
+        "isActive": false
+    }
+]

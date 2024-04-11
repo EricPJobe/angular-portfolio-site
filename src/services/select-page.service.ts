@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Page, TreeNode } from '../types/page';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,45 +9,19 @@ import { BehaviorSubject } from 'rxjs';
 export class SelectPageService {
 
   // move to json file
-  pages: Page[] =  [
-    {
-      ident: 'intro',
-      name: 'introduction.js',
-      body: `Hi! Welcome to my portfolio site! My name is Eric Jobe, and I am a software developer, educator, and community leader.`,
-      text: 'Hello...',
-      graphicUrl: 'url_for_intro',
-      isActive: true,
-    },
-    {
-      ident: 'poetic',
-      name: 'poetic.tsx',
-      body: '',
-      text: 'I coded stuff',
-      graphicUrl: 'url_for_poetic',
-      isActive: false,
-    },
-    {
-      ident: 'apache',
-      name: 'Apache Corp',
-      body: '',
-      text: 'I coded stuff',
-      graphicUrl: 'url_for_apache',
-      isActive: false,
-    },
-    {
-      ident: 'privily',
-      name: 'Privily.io',
-      body: '',
-      text: 'I coded stuff',
-      graphicUrl: 'url_for_privily',
-      isActive: false,
-    },
-  ]
+  pages: Page[] =  [];
 
-  openPagesSubject: BehaviorSubject<Page[]> = new BehaviorSubject<Page[]>([this.pages[0]]);
+  openPagesSubject: BehaviorSubject<Page[]> = new BehaviorSubject<Page[]>([]);;
   //openPages$ = this.openPagesSubject.asObservable();
 
-  constructor() { }
+  private pageDataUrl = 'assets/pages.json';
+
+  constructor(private http: HttpClient) { 
+    this.http.get<any[]>(this.pageDataUrl).subscribe(data => {
+      this.pages = data;
+      this.openPagesSubject.next([this.pages[0]]);
+    });
+  }
 
   addPage(node: TreeNode) {
     const currentPages = this.openPagesSubject.getValue();
